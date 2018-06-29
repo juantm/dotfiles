@@ -9,5 +9,5 @@ call plug#end()
 
 let g:airline_theme='simple'
 
-set spell spelllang=es
+# set spell spelllang=es
 set number
