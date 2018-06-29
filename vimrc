@@ -7,6 +7,7 @@ Plug 'dikiaap/minimalist'
 Plug 'vim-scripts/highlight_current_line.vim'
 call plug#end()
 
+colorscheme minimalist
 let g:airline_theme='simple'
 
 # set spell spelllang=es
