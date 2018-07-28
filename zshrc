@@ -11,3 +11,6 @@ source "${HOME}/.zgen/zgen.zsh"
   zgen load zsh-users/zsh-autosuggestions
 
   alias tmux='tmux -2'
+  export VISUAL=gvim
+  export EDITOR=$VISUAL
+
