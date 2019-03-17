@@ -1,0 +1,32 @@
+call plug#begin('~/_vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+Plug 'itchyny/lightline.vim'
+call plug#end()
+
+syntax on
+set cursorline
+set laststatus=2
+set number
+set encoding=utf-8
+set t_Co=256
+set backspace=indent,eol,start
+set incsearch
+set tabstop=4
+set hlsearch
+
+if has("gui_running")
+colorscheme solarized
+set guifont=Consolas:h10
+set guioptions-=T "Sin barra de herramientas."
+set guioptions-=r "Sin barra derecha"
+endif
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+
