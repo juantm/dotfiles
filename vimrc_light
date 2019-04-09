@@ -1,9 +1,12 @@
+set nocompatible
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
+Plug 'c9s/vikube.vim'
 call plug#end()
 
 syntax on
+set spell spelllang=es
 set cursorline
 set laststatus=2
 set number
@@ -13,14 +16,15 @@ set backspace=indent,eol,start
 set incsearch
 set tabstop=4
 set hlsearch
+set guioptions+=f
 
 if has("gui_running")
-set background=dark
+set background=light
 colorscheme solarized
 if has('win32')
 set guifont=Consolas:h10
 else
-set guifont=Ubuntu\ Mono\ 10
+set guifont=Ubuntu\ Mono\ 11
 endif
 set guioptions-=T "Sin barra de herramientas."
 set guioptions-=r "Sin barra derecha"
