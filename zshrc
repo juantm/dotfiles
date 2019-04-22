@@ -16,3 +16,5 @@ alias tmux='tmux -2'
 export VISUAL=gvim
 export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin
+export TERM=xterm-256color
+
