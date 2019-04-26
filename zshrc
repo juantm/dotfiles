@@ -3,7 +3,8 @@ source "${HOME}/.zgen/zgen.zsh"
 
 zgen oh-my-zsh
 
-zgen oh-my-zsh themes/steeef
+# zgen oh-my-zsh themes/steeef
+zgen oh-my-zsh themes/simple
 zgen oh-my-zsh plugins/tmux
 zgen oh-my-zsh plugins/kubectl
 zgen oh-my-zsh plugins/command-not-found 
@@ -18,3 +19,8 @@ export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin
 export TERM=xterm-256color
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
