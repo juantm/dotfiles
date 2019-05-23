@@ -1,4 +1,6 @@
 # load zgen
+# git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+
 source "${HOME}/.zgen/zgen.zsh"
 
 zgen oh-my-zsh
