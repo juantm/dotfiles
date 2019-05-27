@@ -6,6 +6,8 @@ Plug 'daviesjamie/vim-base16-lightline'
 Plug 'itchyny/lightline.vim'
 Plug 'c9s/vikube.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'mattn/emmet-vim'
+Plug 'stephpy/vim-yaml'
 call plug#end()
 
 syntax on
