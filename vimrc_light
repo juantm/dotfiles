@@ -8,6 +8,11 @@ Plug 'c9s/vikube.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'mattn/emmet-vim'
 Plug 'stephpy/vim-yaml'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 syntax on
@@ -36,14 +41,6 @@ endif
 set guioptions-=T "Sin barra de herramientas."
 set guioptions-=r "Sin barra derecha"
 endif
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " Base16"
 if filereadable(expand("~/.vimrc_background"))
