@@ -21,7 +21,7 @@ zgen oh-my-zsh plugins/bgnotify
 alias tmux='tmux -2'
 export VISUAL=gvim
 export EDITOR=$VISUAL
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
 export TERM=xterm-256color
 export LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib:$LD_LIBRARY_PATH
 

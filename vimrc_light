@@ -36,7 +36,7 @@ colorscheme solarized
 if has('win32')
 set guifont=Consolas:h10
 else
-set guifont=Noto\ Mono\ 10
+set guifont=Iosevka\ SS09\ 10
 endif
 set guioptions-=T "Sin barra de herramientas."
 set guioptions-=r "Sin barra derecha"
