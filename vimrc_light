@@ -13,6 +13,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
 
 syntax on
