@@ -22,8 +22,12 @@ zgen oh-my-zsh plugins/bgnotify
 export VISUAL=gvim
 export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
-export TERM=xterm
+export TERM=xterm-256color
 export LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib:$LD_LIBRARY_PATH
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
