@@ -18,7 +18,8 @@ zgen load zsh-users/zsh-autosuggestions
 # zgen load marzocchi/zsh-notify
 zgen oh-my-zsh plugins/bgnotify
 
-# alias tmux='tmux -2'
+alias tmux='tmux -2'
+alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
 export VISUAL=gvim
 export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
