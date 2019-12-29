@@ -35,3 +35,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+ exec startx
+  export XDG_SESSION_DESKTOP=i3
+  # export LOGNAME=jetoro
+  export XDG_SESSION_TYPE=x11
+  [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+fi
