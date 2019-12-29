@@ -20,7 +20,7 @@ zgen oh-my-zsh plugins/bgnotify
 
 alias tmux='tmux -2'
 alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
-export VISUAL=gvim
+export VISUAL='gvim -f'
 export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
 export TERM=xterm-256color
