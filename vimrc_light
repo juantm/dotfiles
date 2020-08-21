@@ -36,12 +36,12 @@ set guioptions+=f
 
 if has("gui_running")
 let base16colorspace=256
-set background=dark
+"set background=light
 "colorscheme base16-default-dark
 if has('win32')
 set guifont=Consolas:h10
 else
-set guifont=Iosevka\ Term\ 11
+set guifont=Iosevka\ Fixed\ 10
 endif
 set guioptions-=T "Sin barra de herramientas."
 set guioptions-=r "Sin barra derecha"

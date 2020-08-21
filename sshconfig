@@ -1,0 +1,43 @@
+Host f1s00716
+  HostName f1s00716
+  User sopweb
+
+Host f1s00715
+	HostName f1s00715
+	User sopweb
+
+Host f1s01212
+  HostName f1s01212
+  User k8susr
+
+Host f8s00283
+  HostName f8s00283
+  User k8susr
+
+Host f1cloud4070
+  User sopweb
+
+Host f1s00421
+  HostName f1s00421.falabella.cl
+  User sopweb
+
+Host f1s00217
+	User k8susr
+
+Host f1s00217
+	User k8susr
+	CanonicalizeHostname yes
+	CanonicalDomains falabella.cl
+
+Host srerunnerdcc1
+  User k8susr
+  CanonicalizeHostname yes
+  CanonicalDomains falabella.com
+
+Host *
+User jetoro
+CanonicalizeHostname yes
+CanonicalDomains falabella.cl
+TCPKeepAlive yes
+ServerAliveInterval 30
+
