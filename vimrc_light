@@ -37,7 +37,7 @@ set guioptions+=f
 if has("gui_running")
 let base16colorspace=256
 "set background=light
-"colorscheme base16-default-dark
+colorscheme base16-default-dark
 if has('win32')
 set guifont=Consolas:h10
 else
@@ -48,8 +48,8 @@ set guioptions-=r "Sin barra derecha"
 endif
 
 " Base16"
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+"if filereadable(expand("~/.vimrc_background"))
+"  let base16colorspace=256
+"  source ~/.vimrc_background
+"endif
 
