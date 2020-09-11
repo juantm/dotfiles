@@ -1,8 +1,8 @@
 !! URxvt Appearance
-URxvt.font: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
-URxvt.boldFont: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
-URxvt.italicFont: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
-URxvt.boldItalicfont: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
+URxvt*font: -*-envypn-*
+URxvt*boldFont: -*-envypn-*
+URxvt*italicFont: -*-envypn-*
+URxvt*boldItalicfont: -*-envypn-*
 !*.font: xft:Iosevka Term:style=Regular:size=10
 !*.boldFont: xft:Iosevka Term:style=Bold:size=10
 !*.italicFont: xft:Iosevka Term:style=Italic:size=10
@@ -15,12 +15,13 @@ URxvt.geometry: 110x50
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
 URxvt.saveline: 2048
-URxvt.scrollBar: false
+URxvt*scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
-URxvt.depth: 32
-URxvt.alpha: 0.9
-URxvt.iso14755: false
+URxvt*depth: 32
+URxvt*alpha: 0.9
+URxvt*background: [95]#000000
+URxvt*iso14755: false
 
 URxvt*loginShell:  true
 
