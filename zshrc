@@ -20,15 +20,15 @@ zgen oh-my-zsh plugins/bgnotify
 
 alias tmux='tmux -2'
 alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
-export VISUAL='gvim -f'
+export VISUAL='nvim -f'
 export EDITOR=$VISUAL
 export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
-export TERM=xterm-256color
+export TERM=screen-256color
 export LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib:$LD_LIBRARY_PATH
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
+#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#        source /etc/profile.d/vte.sh
+#fi
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -36,10 +36,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
- exec startx
-  export XDG_SESSION_DESKTOP=i3
-  # export LOGNAME=jetoro
-  export XDG_SESSION_TYPE=x11
-  [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
-fi
+#if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+# exec startx
+#  export XDG_SESSION_DESKTOP=i3
+#  # export LOGNAME=jetoro
+#  export XDG_SESSION_TYPE=x11
+#  [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+#fi
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
