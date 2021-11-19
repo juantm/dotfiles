@@ -31,11 +31,14 @@ alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
 export VISUAL='nvim -f'
 export EDITOR=$VISUAL
 
-PATH=$PATH:/usr/local/Cellar/openfortivpn/1.17.1/bin
-export PATH=$PATH:$GOROOT/bin:$HOME/.local/bin
+[ -d "$HOME/.emacs.d/bin" ] && PATH=$PATH:$HOME/.emacs.d/bin
+[[ -n "${GOROOT-}" && -d "${GOROOT}/bin" ]] && PATH=$PATH:$GOROOT/bin
+PATH=$PATH:$HOME/.local/bin
+export PATH
 export TERM=screen-256color
 export LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib:$LD_LIBRARY_PATH
-
+export LANG=es_ES.UTF-8
+export LC_ALL=$LANG
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #        source /etc/profile.d/vte.sh
 #fi

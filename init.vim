@@ -22,5 +22,5 @@ set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúscu
 set spelllang=es  " Corregir palabras usando diccionarios en inglés y español
 
 set termguicolors  " Activa true colors en la terminal
-" set background=light  " Fondo del tema: light o dark
-" colorscheme zellner  " Nombre del tema
+set background=light  " Fondo del tema: light o dark
+colorscheme zellner  " Nombre del tema
