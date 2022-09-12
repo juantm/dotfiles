@@ -1,8 +1,12 @@
 set nocompatible
 set encoding=UTF-8
+set wrap
 set relativenumber
 set number
+set complete-=1
 set tabstop=2 shiftwidth=2 expandtab
+set autochdir
+set statusline+=%F
 set incsearch
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
@@ -24,10 +28,7 @@ if !&sidescrolloff
 endif
 set display+=lastline
 
-if &encoding ==# 'latin1' && has('gui_running')
-  set encoding=utf-8
-endif
-
+set list
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:.,extends:>,precedes:<,nbsp:+
 endif
@@ -43,6 +44,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree' |
       \ Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 autocmd VimEnter * NERDTree
@@ -54,6 +56,23 @@ if has('gui_running')
   colorscheme base16-atelier-plateau-light 
   set background=light
 endif
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+  \ 'Modified'  :'✹',
+  \ 'Staged'    :'✚',
+  \ 'Untracked' :'✭',
+  \ 'Renamed'   :'➜',
+  \ 'Unmerged'  :'═',
+  \ 'Deleted'   :'✖',
+  \ 'Dirty'     :'✗',
+  \ 'Ignored'   :'☒',
+  \ 'Clean'     :'✔︎',
+  \ 'Unknown'   :'?',
+  \ }
+
+autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
+autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
+let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=35
 
 " inoremap {<cr> {<cr>}<C-O><S-O>
 " inoremap (<cr> (<cr>)<c-o><s-o>
