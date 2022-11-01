@@ -22,9 +22,9 @@ zgen oh-my-zsh plugins/kubectl
 zgen oh-my-zsh plugins/command-not-found 
 # zgen oh-my-zsh plugins/npm
 zgen load zsh-users/zsh-syntax-highlighting
-#zgen load zsh-users/zsh-completions
-zgen load zsh-users/zsh-history-substring-search
-zgen load zsh-users/zsh-autosuggestions
+# zgen load zsh-users/zsh-completions
+# zgen load zsh-users/zsh-history-substring-search
+# zgen load zsh-users/zsh-autosuggestions
 # zgen load marzocchi/zsh-notify
 zgen oh-my-zsh plugins/bgnotify
 
@@ -32,7 +32,7 @@ alias tmux='tmux -2'
 alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
 export VISUAL='nvim -f'
 export EDITOR=$VISUAL
-
+[ -d "/Applications/Emacs.app/Contents/MacOS" ] && PATH=$PATH:/Applications/Emacs.app/Contents/MacOS
 [ -d "$HOME/.emacs.d/bin" ] && PATH=$PATH:$HOME/.emacs.d/bin
 [[ -n "${GOROOT-}" && -d "${GOROOT}/bin" ]] && PATH=$PATH:$GOROOT/bin
 PATH=$PATH:$HOME/.local/bin
@@ -60,7 +60,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 #fi
 
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
-
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
