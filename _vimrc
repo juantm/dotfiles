@@ -7,6 +7,7 @@ set complete-=1
 set tabstop=2 shiftwidth=2 expandtab
 set autochdir
 set statusline+=%F
+set mouse=a
 set incsearch
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
@@ -40,18 +41,19 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 " Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree' |
       \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
 
 if has('gui_running')
   " set guifont=FiraCode_Nerd_Font_Mono:h9:cANSI:qDRAFT
-  set guifont=Hack_Nerd_Font_Mono:h9:cANSI:qDRAFT
+  " set guifont=Hack_Nerd_Font_Mono:h9:cANSI:qDRAFT
+  set guifont=HackNerdFontCompleteM-Regular:h11
   colorscheme base16-atelier-plateau-light 
   set background=light
 endif
@@ -68,8 +70,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
   \ 'Unknown'   :'?',
   \ }
 
-autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
-autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
+" autocmd VimEnter * nmap <F3> :NERDTreeToggle<CR>
+" autocmd VimEnter * imap <F3> <Esc>:NERDTreeToggle<CR>a
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
