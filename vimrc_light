@@ -21,7 +21,7 @@ Plug 'zxqfl/tabnine-vim'
 call plug#end()
 
 syntax on
-set spell spelllang=es
+" set spell spelllang=es
 set nospell
 set cursorline
 " set laststatus=2
