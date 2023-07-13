@@ -62,6 +62,13 @@
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
+;; Projectile
+(use-package projectile
+  :custom
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  :ensure t
+  :init
+  (projectile-mode t))
 
 (use-package treemacs
   :ensure t
@@ -73,8 +80,19 @@
         ("C-c t d"   . treemacs-select-directory)
         ("C-c t B"   . treemacs-bookmark)
         ("C-c t C-t" . treemacs-find-file)
-        ("C-c t M-t" . treemacs-find-tag)))  
-  )
+        ("C-c t M-t" . treemacs-find-tag)))
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
+
+(use-package treemacs-icons-dired
+  :hook (dired-mode . treemacs-icons-dired-enable-once)
+  :ensure t)
+
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
 
 (use-package which-key
   :ensure t
