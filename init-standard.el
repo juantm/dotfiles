@@ -1,5 +1,6 @@
 (setq inhibit-startup-message t) ;; hide the startup message
-(setq default-directory "C:/Users/juant/")
+(when (eq system-type 'windows-nt)
+  (setq default-directory "C:/Users/juant/"))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -7,12 +8,20 @@
   (add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+
 ;; (set-face-attribute 'default nil :font "JetBrainsMonoNL NF" :height 120)
 ;; (set-face-attribute 'default nil :font "CozetteVector" :height 100)
 ;; (set-face-attribute 'default nil :font "Envy Code R" :height 130)
 ;; (set-face-attribute 'default nil :font "Ubuntu" :height 130)
 ;; (set-face-attribute 'default nil :font "Cascadia Code" :height 120)
 (set-face-attribute 'default nil :font "IntelOne Mono" :height 120 :weight 'regular)
+(when (eq system-type 'darwin)
+  (set-face-attribute 'default nil :font "IntelOne Mono" :height 140 :weight 'regular))
 (load-theme 'adwaita t)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
