@@ -50,13 +50,9 @@
       completion-ignore-case t)
 
 ;;; Pop-up completion
-(unless (package-installed-p 'corfu)
-  (package-install 'corfu))
-(use-package corfu
-  :custom
-  (corfu-auto t)
-  :init
-  (global-corfu-mode))
+(use-package company
+  :ensure t
+  :hook (after-init . global-company-mode))
 
 ;;; Git client
 (unless (package-installed-p 'magit)
@@ -98,6 +94,37 @@
   :ensure t
   :init
   (which-key-mode t))
+
+(unless (package-installed-p 'json-mode)
+  (package-install 'json-mode))
+
+(unless (package-installed-p 'yaml-mode)
+  (package-install 'yaml-mode))
+
+;;; EditorConfig support
+(use-package editorconfig
+  :ensure t
+  :init
+  (editorconfig-mode t))
+
+(use-package terraform-mode
+  :ensure t)
+
+;;; LSP Support
+;; (use-package eglot
+;;   :ensure t
+;;   :hook (prog-mode . eglot-ensure))
+
+(use-package lsp-mode
+  :ensure t
+  :hook (terraform-mode . lsp-deferred))
+
+(use-package diff-hl
+  :ensure t
+  :hook (prog-mode . diff-hl-mode)
+  :custom
+  (diff-hl-flydiff-mode)
+  )
 
 (setq-default major-mode
               (lambda () ; guess major mode from file name
