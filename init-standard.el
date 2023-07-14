@@ -2,6 +2,11 @@
 (when (eq system-type 'windows-nt)
   (setq default-directory "C:/Users/juant/"))
 
+(when (eq system-type 'darwin)
+  (setq dired-use-ls-dired t
+	insert-directory-program "/usr/local/bin/gls"
+	dired-listing-switches "-aBhl --group-directories-first"))
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (with-eval-after-load 'package
