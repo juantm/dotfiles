@@ -49,5 +49,3 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 (package! evil-surround)
-(package! ubuntu-theme)
-(package! timu-macos-theme)
