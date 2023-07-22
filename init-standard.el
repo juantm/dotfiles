@@ -131,6 +131,22 @@
   (diff-hl-flydiff-mode)
   )
 
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+
+(autoload 'bash-completion-dynamic-complete
+  "bash-completion"
+  "BASH completion hook")
+(add-hook 'shell-dynamic-complete-functions
+	  'bash-completion-dynamic-complete)
+
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (add-hook 'completion-at-point-functions
+                      'bash-completion-capf-nonexclusive nil t)))
+
 (setq-default major-mode
               (lambda () ; guess major mode from file name
                 (unless buffer-file-name
