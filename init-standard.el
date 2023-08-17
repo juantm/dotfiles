@@ -1,4 +1,11 @@
 (setq inhibit-startup-message t) ;; hide the startup message
+(setq user-full-name "Juan E. Toro"
+      user-mail-address "jetoro@falabella.cl")
+
+(repeat-mode 1)
+;; don't interrupt me with native compilation warnings
+(setq native-comp-async-report-warnings-errors nil)
+
 (when (eq system-type 'windows-nt)
   (setq default-directory "C:/Users/juant/"))
 
@@ -40,19 +47,19 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(unless (package-installed-p 'vertico)
-  (package-install 'vertico))
 (use-package vertico
+  :ensure t
   :init
   (vertico-mode t)
-  )
+)
 
-(unless (package-installed-p 'consult)
-  (package-install 'consult))
-
-(setq read-buffer-completion-ignore-case t
+(use-package consult
+  :ensure t
+  :init
+  (setq read-buffer-completion-ignore-case t
       read-file-name-completion-ignore-case t
       completion-ignore-case t)
+)
 
 ;;; Pop-up completion
 (use-package company
@@ -60,8 +67,7 @@
   :hook (after-init . global-company-mode))
 
 ;;; Git client
-(unless (package-installed-p 'magit)
-  (package-install 'magit))
+(use-package magit :ensure t)
 
 ;; Projectile
 (use-package projectile
