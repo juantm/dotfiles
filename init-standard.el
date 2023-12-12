@@ -79,29 +79,31 @@
   :init
   (projectile-mode t))
 
-(use-package treemacs
-  :ensure t
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-c t 1"   . treemacs-delete-other-windows)
-        ("C-c t t"   . treemacs)
-        ("C-c t d"   . treemacs-select-directory)
-        ("C-c t B"   . treemacs-bookmark)
-        ("C-c t C-t" . treemacs-find-file)
-        ("C-c t M-t" . treemacs-find-tag)))
+;; (use-package treemacs
+;;   :ensure t		       
+;;   :BIND
+;;   (:map global-map			
+;;         ("M-0"       . treemacs-select-window)
+;;         ("C-c t 1"   . treemacs-delete-other-windows)
+;;         ("C-c t t"   . treemacs)
+;;         ("C-c t d"   . treemacs-select-directory)
+;;         ("C-c t B"   . treemacs-bookmark)
+;;         ("C-c t C-t" . treemacs-find-file)
+;;         ("C-c t M-t" . treemacs-find-tag))
+;;  )
 
-(use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
+;; (use-package treemacs-projectile
+;;   :after (treemacs projectile)
+;;   :ensure t)
 
-(use-package treemacs-icons-dired
-  :hook (dired-mode . treemacs-icons-dired-enable-once)
-  :ensure t)
+;; (use-package treemacs-icons-dired
+;;   :hook (dired-mode . treemacs-icons-dired-enable-once)
+;;   :ensure t
+;;  )					
 
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
+;; (use-package treemacs-magit
+;;   :after (treemacs magit)
+;;   :ensure t)
 
 (use-package which-key
   :ensure t
