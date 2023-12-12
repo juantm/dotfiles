@@ -146,6 +146,8 @@
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
 
+(use-package ansible :ensure t)
+
 (autoload 'bash-completion-dynamic-complete
   "bash-completion"
   "BASH completion hook")
