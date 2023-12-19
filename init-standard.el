@@ -53,10 +53,11 @@
   (package-install 'use-package))
 
 (use-package vertico
-  :ensure t
-  :init
-  (vertico-mode t)
-)
+:ensure t
+:(vertico-mode t))
+    
+(use-package vterm
+  :ensure t)
 
 (use-package consult
   :ensure t
