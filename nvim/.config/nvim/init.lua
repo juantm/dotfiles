@@ -1,9 +1,13 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set number relativenumber")
-vim.cmd("set foldcolumn=3")
+local set = vim.opt
+set.tabstop = 2
+set.shiftwidth = 2
+set.softtabstop = 2
+set.expandtab = true
+set.number = true
+set.relativenumber = true
+set.foldcolumn = "3"
+set.autoindent = true
+
 vim.g.mapleader = " "
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -18,35 +22,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" } 
-}
-local opts = {}
+require("lazy").setup("plugins")
 
-require("lazy").setup(plugins, opts)
+vim.keymap.set('n', '<leader>bn', ':bn<CR>')
+vim.keymap.set('n', '<leader>bp', ':bp<CR>')
+vim.keymap.set('n', '<leader>bb', ':ls<CR>')
+vim.keymap.set('n', '<leader>bd', ':bd<CR>')
+vim.keymap.set('n', '<leader>fs', ':w<CR>')
 
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = { "yaml", "json", "terraform" },
-  highlight = { enable = true },
-  indent = { enable = true },
-})
-
-require("catppuccin").setup({
-  background = {
-    light = "latte",
-    dark = "frappe",
-  }
-})
-vim.cmd.colorscheme "catppuccin"
