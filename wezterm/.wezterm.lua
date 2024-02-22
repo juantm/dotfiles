@@ -12,8 +12,8 @@ end
 
 -- This is where you actually apply your config choices
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS07', 'MesloLGS NF'}
-config.font = wezterm.font_with_fallback {'Cozette', 'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
-config.font_size = 16.0
+config.font = wezterm.font_with_fallback {'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
+config.font_size = 14.0
 -- For example, changing the color scheme:
 config.color_scheme = 'Catppuccin Frappe'
 -- and finally, return the configuration to wezterm

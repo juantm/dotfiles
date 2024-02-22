@@ -29,4 +29,4 @@ vim.keymap.set('n', '<leader>bp', ':bp<CR>')
 vim.keymap.set('n', '<leader>bb', ':ls<CR>')
 vim.keymap.set('n', '<leader>bd', ':bd<CR>')
 vim.keymap.set('n', '<leader>fs', ':w<CR>')
-
+vim.keymap.set('n', '<leader>qq', ':qa!<CR>')
