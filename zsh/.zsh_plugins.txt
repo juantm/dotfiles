@@ -4,11 +4,6 @@
 rupa/z
 # zsh-users/zsh-completions
 
-# empty lines are skipped
-
-# annotations are also allowed:
-romkatv/zsh-bench kind:path
-
 # frameworks like oh-my-zsh are supported
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/magic-enter
