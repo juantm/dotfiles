@@ -13,8 +13,8 @@ end
 -- This is where you actually apply your config choices
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS07', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback { 'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
-config.font = wezterm.font_with_fallback({"MesloLGS NF", "Iosevka Term SS07", "IosevkaTerm Nerd Font" })
-config.font_size = 14.0
+config.font = wezterm.font_with_fallback({ "Iosevka Term SS07", "MesloLGS NF", "IosevkaTerm Nerd Font" })
+config.font_size = 16.0
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
