@@ -9,13 +9,16 @@ PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 [ -d "$XDG_CONFIG_HOME/emacs.d/bin" ] && PATH=$PATH:$XDG_CONFIG_HOME/emacs.d/bin
 [[ -n "${GOROOT-}" && -d "${GOROOT}/bin" ]] && PATH=$PATH:$GOROOT/bin
 export PATH
-alias ll="ls -lhtra --color" 
-#export JIRA_API_USER="jetoro@falabella.cl"
-#export JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
+alias ll="ls -lhtra --color"
+if [[ "$(uname)" == "Darwin" ]]; then
+export JIRA_API_USER="jetoro@falabella.cl"
+export JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
+fi
 
 autoload -Uz compinit
 compinit
-source '/usr/share/zsh-antidote/antidote.zsh'
+[[ "$(uname)" == "Darwin" ]] && source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+[[ "$(uname)" == "Arch" ]] && source '/usr/share/zsh-antidote/antidote.zsh'
 #antidote load
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
