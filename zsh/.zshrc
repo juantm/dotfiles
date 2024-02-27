@@ -18,7 +18,7 @@ fi
 autoload -Uz compinit
 compinit
 [[ "$(uname)" == "Darwin" ]] && source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-[[ "$(uname)" == "Arch" ]] && source '/usr/share/zsh-antidote/antidote.zsh'
+[[ "$(uname)" == "Linux" ]] && source '/usr/share/zsh-antidote/antidote.zsh'
 #antidote load
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
