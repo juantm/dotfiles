@@ -14,7 +14,11 @@ end
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS05', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback { 'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
 config.font = wezterm.font_with_fallback({ "Iosevka SS05", "IosevkaTerm Nerd Font" })
-config.font_size = 12.0
+local font_size = 12.0
+if wezterm.target_triple == 'x86_64-apple-darwin' then
+  font_size = 16.0
+end
+config.font_size = font_size
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
