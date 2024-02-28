@@ -15,6 +15,7 @@ export JIRA_API_USER="jetoro@falabella.cl"
 export JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
 fi
 
+[[ "$(uname)" == "Darwin" ]] && source <(kubectl completion zsh)
 autoload -Uz compinit
 compinit
 [[ "$(uname)" == "Darwin" ]] && source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
