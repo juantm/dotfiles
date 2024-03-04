@@ -10,5 +10,5 @@ return {
       vim.api.nvim_set_option("background", "light")
       vim.cmd.colorscheme("catppuccino-latte")
     end,
-  }
+  },
 }
