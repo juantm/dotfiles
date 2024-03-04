@@ -1,3 +1,4 @@
 
 *.swp
 /#init-standard.el#
+nvim/.config/nvim/lazy-lock.json
