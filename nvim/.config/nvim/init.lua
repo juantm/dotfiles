@@ -37,3 +37,4 @@ vim.keymap.set('n', '<leader>tn', ':tabNext<CR>')
 vim.keymap.set('n', '<leader>tp', ':tabPrevious<CR>')
 vim.keymap.set('n', '<leader>td', ':tabclose<CR>')
 
+
