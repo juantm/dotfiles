@@ -5,6 +5,7 @@ return {
       vim.keymap.set("n", "<leader>gg", ":Git status %<CR>")
       vim.keymap.set("n", "<leader>ga", ":Git stage %<CR>")
       vim.keymap.set("n", "<leader>gc", ":Git commit %<CR>")
+      vim.keymap.set("n", "<leader>g<S-p>", ":Git push<CR>")
     end,
 	},
 	{
