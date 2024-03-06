@@ -12,7 +12,7 @@ return {
         barbar = true,
         telescope = {
           enabled = true,
-          style = "nvchad"
+        --  style = "nvchad"
         },
         gitgutter =true,
       },
