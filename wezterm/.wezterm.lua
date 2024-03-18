@@ -14,7 +14,7 @@ end
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS05', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback { 'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback({ "Iosevka SS05", "IosevkaTerm Nerd Font" })
-config.font = wezterm.font_with_fallback({ "Dank Mono", "MesloLGS NF" })
+config.font = wezterm.font_with_fallback({ "Dank Mono", "DankMono Nerd Font" })
 local font_size = 14.0
 if wezterm.target_triple == 'x86_64-apple-darwin' then
   font_size = 18.0
