@@ -92,8 +92,9 @@
 
 ;; Unless we've already fetched (and cached) the package archives,
 ;; refresh them.
-(unless package-archive-contents
-  (package-refresh-contents))
+
+;;(when (not package-archive-contents)
+;;  (package-refresh-contents))
 
 ;; Add the :vc keyword to use-package, making it easy to install
 ;; packages directly from git repositories.
@@ -122,7 +123,6 @@
   :ensure t
   :config
   (load-theme 'catppuccin :no-confirm)
-  :init
   (setq catppuccin-flavor 'macchiato)
   (catppuccin-reload))
 
@@ -172,7 +172,8 @@
 (use-package eglot
   :ensure t
   :bind (("s-<mouse-1>" . eglot-find-implementation)
-         ("C-c ." . eglot-code-action-quickfix)))
+         ("C-c ." . eglot-code-action-quickfix))
+  :hook (prog-mode . eglot-ensure))
 
 ;; Add extra context to Emacs documentation to help make it easier to
 ;; search and understand. This configuration uses the keybindings 

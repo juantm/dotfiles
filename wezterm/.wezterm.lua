@@ -17,8 +17,9 @@ end
 config.font = wezterm.font_with_fallback({ "Dank Mono", "DankMono Nerd Font" })
 local font_size = 14.0
 if wezterm.target_triple == 'x86_64-apple-darwin' then
-  font_size = 16.0
+  font_size = 18.0
 end
+
 config.font_size = font_size
 
 function scheme_for_appearance(appearance)
