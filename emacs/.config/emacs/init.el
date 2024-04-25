@@ -112,7 +112,8 @@
 ;;   :bind        ; Bind these keys to these functions
 ;;   :custom      ; Set these variables
 ;;   :config      ; Run this code after my-package is loaded
-
+(use-package vterm
+  :ensure t)
 ;; A package with a great selection of themes:
 ;; https://protesilaos.com/emacs/ef-themes
 ;;(use-package ef-themes
@@ -191,6 +192,9 @@
 (use-package magit
   :ensure t
   :bind (("C-c g" . magit-status)))
+
+(use-package gitlab-ci-mode
+  :ensure t)
 
 ;; In addition to installing packages from the configured package
 ;; registries, you can also install straight from version control
