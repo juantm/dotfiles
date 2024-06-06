@@ -3,3 +3,16 @@
 /#init-standard.el#
 nvim/.config/nvim/lazy-lock.json
 .luarc.json
+emacs/.config/emacs/eln-cache/29.3-04fd448d
+emacs/.config/emacs/elpa
+emacs/.config/emacs/transient
+emacs/.config/emacs/backups
+emacs/.config/emacs/custom.el
+emacs/.config/emacs/history
+emacs/.config/emacs/places
+emacs/.config/emacs/recentf
+k9s/.config/k9s/skins
+nvim/.config/gcloud/logs/2024.05.24
+nvim/.config/gcloud/configurations
+nvim/.config/gcloud
+nvim/.config/k9s/skins

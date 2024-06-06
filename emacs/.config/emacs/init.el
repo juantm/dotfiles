@@ -31,7 +31,7 @@
 (scroll-bar-mode -1)
 
 ;; Set the font. Note: height = px * 100
-(set-face-attribute 'default nil :font "DankMono Nerd Font" :height 150)
+(set-face-attribute 'default nil :font "DankMono Nerd Font" :height 160)
 
 ;; Add unique buffer names in the minibuffer where there are many
 ;; identical files. This is super useful if you rely on folders for
