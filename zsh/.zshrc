@@ -13,10 +13,12 @@ vterm_printf() {
 }
 
 PATH=$PATH:$HOME/.local/bin:/usr/local/bin
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 XDG_CONFIG_HOME=$HOME/.config
 K9S_CONFIG_DIR=${XDG_CONFIG_HOME}/k9s
 [[ -n "${GOROOT-}" && -d "${GOROOT}/bin" ]] && PATH=$PATH:$GOROOT/bin
 [ -d "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+[ -d "${XDG_CONFIG_HOME}/emacs/bin" ] && PATH=$PATH:"${XDG_CONFIG_HOME}/emacs/bin" 
 [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ] && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 VISUAL='nvim -f'
@@ -27,7 +29,7 @@ export XDG_CONFIG_HOME
 export K9S_CONFIG_DIR
 export PATH
 alias ll="ls -lhtra --color"
-
+alias update="brew update && brew upgrade"
 if [[ "$(uname)" == "Darwin" ]]; then
 # JIRA_API_USER="jetoro@falabella.cl"
 # JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
@@ -41,3 +43,7 @@ fi
 #antidote load
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
+
+PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
+autoload bashcompinit && bashcompinit
+source $(brew --prefix)/etc/bash_completion.d/az
