@@ -23,10 +23,12 @@ K9S_CONFIG_DIR=${XDG_CONFIG_HOME}/k9s
 [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ] && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 VISUAL='nvim -f'
 EDITOR=$VISUAL
+VAULT_ADDR="https://secret-mgmt.falabella.tech/"
 
 export KUBECONFIG=~/.kube/config:$(find ~/.kube -type f -iname '*.yaml' | tr '\n' ':')
 export XDG_CONFIG_HOME
 export K9S_CONFIG_DIR
+export VAULT_ADDR
 export PATH
 alias ll="ls -lhtra --color"
 alias update="brew update && brew upgrade"
@@ -45,5 +47,6 @@ antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
 
 PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
+# RPROMPT='$(kube_ps1)'
 autoload bashcompinit && bashcompinit
 source $(brew --prefix)/etc/bash_completion.d/az
