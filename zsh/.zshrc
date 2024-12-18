@@ -23,16 +23,17 @@ K9S_CONFIG_DIR=${XDG_CONFIG_HOME}/k9s
 [ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ] && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 VISUAL='nvim -f'
 EDITOR=$VISUAL
-VAULT_ADDR="https://secret-mgmt.falabella.tech/"
 
-export KUBECONFIG=~/.kube/config:$(find ~/.kube -type f -iname '*.yaml' | tr '\n' ':')
 export XDG_CONFIG_HOME
 export K9S_CONFIG_DIR
-export VAULT_ADDR
 export PATH
 alias ll="ls -lhtra --color"
-alias update="brew update && brew upgrade"
 if [[ "$(uname)" == "Darwin" ]]; then
+export TERM="xterm-256color"
+VAULT_ADDR="https://secret-mgmt.falabella.tech/"
+export VAULT_ADDR
+export KUBECONFIG=~/.kube/config:$(find ~/.kube -type f -iname '*.yaml' | tr '\n' ':')
+alias update="brew update && brew upgrade"
 # JIRA_API_USER="jetoro@falabella.cl"
 # JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
 # export JIRA_API_USER
