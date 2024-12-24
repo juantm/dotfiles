@@ -14,15 +14,20 @@ end
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS05', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback { 'Terminus (TTF)', 'Terminess Nerd Font', 'MesloLGS NF'}
 -- config.font = wezterm.font_with_fallback({ "Iosevka SS05", "IosevkaTerm Nerd Font" })
-config.font = wezterm.font_with_fallback({ "DankMono Nerd Font" })
+local fuentes = {}
+fuentes = wezterm.font_with_fallback({
+	{ family = "Dank Mono", weight = "Thin" },
+	{ family = "CaskaydiaCove Nerd Font", weight = "Thin" },
+})
+config.font = fuentes
 local font_size = 14.0
-if wezterm.target_triple == 'x86_64-apple-darwin' then
-  font_size = 16.0
+if wezterm.target_triple == "x86_64-apple-darwin" then
+	font_size = 16.0
 end
 
 config.font_size = font_size
 
-function scheme_for_appearance(appearance)
+local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Catppuccin Macchiato"
 	else
