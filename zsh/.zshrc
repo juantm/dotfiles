@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -Uz compinit
-compinit
 vterm_printf() {
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
         # Tell tmux to pass the escape sequences through
@@ -46,7 +44,7 @@ source <(kubectl completion zsh)
 source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 source $(brew --prefix)/etc/bash_completion.d/az
 # JIRA_API_USER="jetoro@falabella.cl"
-# JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a 'jetoro@falabella.cl')
+# JIRA_API_TOKEN=$(security find-generic-password -w -s 'jira-api-key'  -a '${JIRA_API_USER}')
 # export JIRA_API_USER
 # export JIRA_API_TOKEN
 fi
@@ -54,9 +52,25 @@ fi
 antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
 
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+
 # PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
 # RPROMPT='$(kube_ps1)'
 # autoload bashcompinit && bashcompinit
+# RPS1='$(kubectx_prompt_info)'
+autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
