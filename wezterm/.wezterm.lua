@@ -37,6 +37,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.color_scheme = "Catppuccin Macchiato"
 -- and finally, return the configuration to wezterm
 -- config.default_prog = { '/usr/local/bin/tmux', '-2' }
 config.hide_tab_bar_if_only_one_tab = true
