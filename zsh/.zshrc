@@ -5,6 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Mis variables de entorno.
+PATH=$PATH:$HOME/.local/bin:/usr/local/bin
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+XDG_CONFIG_HOME=$HOME/.config
+K9S_CONFIG_DIR=${XDG_CONFIG_HOME}/k9s
+[ -d "${XDG_CONFIG_HOME}/emacs/bin" ] && PATH=$PATH:"${XDG_CONFIG_HOME}/emacs/bin"
+VISUAL='nvim -f'
+EDITOR=$VISUAL
+VAULT_ADDR="https://secret-mgmt.falabella.tech/"
+KUBECONFIG=~/.kube/config:$(find ~/.kube -type f -iname '*.yaml' | tr '\n' ':')
+export PATH XDG_CONFIG_HOME K9S_CONFIG_DIR VISUAL EDITOR VAULT_ADDR KUBECONFIG
+
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -80,6 +92,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ll='ls -l --color'
 alias vim='nvim'
 alias c='clear'
+alias update='brew update && brew upgrade && brew cleanup'
 
 # Shell integrations
 eval "$(fzf --zsh)"
