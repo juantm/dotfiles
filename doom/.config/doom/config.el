@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
- (setq user-full-name "Juan E. Toro"
-       user-mail-address "juan.toro.marty@gmail.com")
+(setq user-full-name "Juan E. Toro"
+      user-mail-address "jetoro@falabella.cl")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "DankMono Nerd Font" :size 16))
-;;      doom-variable-pitch-font (font-spec :family "Dank Mono" :size 18))
+(setq doom-font (font-spec :family "DankMono Nerd Font" :size 14 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,8 +32,13 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+;; (setq doom-theme 'doom-one)
+(set-face-attribute 'font-lock-comment-face nil :foreground "#5B6268" :slant 'italic)
+(set-face-attribute 'font-lock-function-name-face nil :foreground "#c678dd" :slant 'italic)
+(set-face-attribute 'font-lock-variable-name-face nil :foreground "#dcaeea" :slant 'italic)
+(setq catppuccin-flavor 'latte)
 (setq doom-theme 'catppuccin)
-
+(setq doom-themes-enable-italic t)
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
