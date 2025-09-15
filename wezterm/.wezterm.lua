@@ -16,8 +16,11 @@ end
 -- config.font = wezterm.font_with_fallback({ "Iosevka SS05", "IosevkaTerm Nerd Font" })
 local fuentes = {}
 fuentes = wezterm.font_with_fallback({
-	{ family = "Dank Mono", weight = "Medium" },
-	{ family = "CaskaydiaCove Nerd Font", weight = "Medium" },
+	--  { family = "Dank Mono", weight = "Bold" },
+	{ family = "Dank Mono", weight = 400 },
+	--  { family = "Cozette", weight = "Regular" },
+	--  { family = "Victor Mono", weight = 600 },
+	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 })
 config.font = fuentes
 local font_size = 14.0
@@ -29,7 +32,7 @@ config.font_size = font_size
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Catppuccin Frappe"
+		return "Catppuccin Macchiato"
 	else
 		return "Catppuccin Latte"
 	end
@@ -37,7 +40,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
-config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = "Catppuccin Macchiato"
 -- and finally, return the configuration to wezterm
 -- config.default_prog = { '/usr/local/bin/tmux', '-2' }
 config.hide_tab_bar_if_only_one_tab = true

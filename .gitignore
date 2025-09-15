@@ -16,3 +16,4 @@ nvim/.config/gcloud/logs/2024.05.24
 nvim/.config/gcloud/configurations
 nvim/.config/gcloud
 nvim/.config/k9s/skins
+.DS_Store
