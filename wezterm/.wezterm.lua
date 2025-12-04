@@ -17,9 +17,9 @@ end
 local fuentes = {}
 fuentes = wezterm.font_with_fallback({
 	--  { family = "Dank Mono", weight = "Bold" },
-	{ family = "Dank Mono", weight = 400 },
+	--  { family = "Dank Mono", weight = 400 },
 	--  { family = "Cozette", weight = "Regular" },
-	--  { family = "Victor Mono", weight = 600 },
+	{ family = "Victor Mono", weight = 400 },
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 })
 config.font = fuentes

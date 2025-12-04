@@ -295,3 +295,5 @@ if [[ "$(uname)" == "Darwin" ]]; then
   }
 fi
 alias emacs-gui="/usr/local/opt/emacs-plus@30/bin/emacs"
+export DD_APP_KEY=1445899ab946f5ebb24ff19538853ad6af622648
+export DD_API_KEY=a009cec817d50f5a960ffd00645c453f
