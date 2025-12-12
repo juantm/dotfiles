@@ -19,7 +19,12 @@ fuentes = wezterm.font_with_fallback({
 	--  { family = "Dank Mono", weight = "Bold" },
 	--  { family = "Dank Mono", weight = 400 },
 	--  { family = "Cozette", weight = "Regular" },
-	{ family = "Victor Mono", weight = 400 },
+	--- { family = "Victor Mono", weight = 400 },
+	{
+		family = "Fira Code iScript",
+		weight = "Regular",
+		harfbuzz_features = { "zero", "ss01", "ss07", "cv24", "cv31" },
+	},
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 })
 config.font = fuentes
@@ -37,7 +42,6 @@ local function scheme_for_appearance(appearance)
 		return "Catppuccin Latte"
 	end
 end
-
 -- For example, changing the color scheme:
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 -- config.color_scheme = "Catppuccin Macchiato"
