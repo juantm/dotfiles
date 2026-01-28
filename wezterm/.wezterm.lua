@@ -21,9 +21,10 @@ fuentes = wezterm.font_with_fallback({
 	--  { family = "Cozette", weight = "Regular" },
 	--- { family = "Victor Mono", weight = 400 },
 	{
-		family = "Fira Code iScript",
-		weight = "Regular",
-		harfbuzz_features = { "zero", "ss01", "ss07", "cv24", "cv31" },
+		--  family = "Fira Code iScript",
+		family = "LigaConsola Nerd Font",
+		--  weight = "Light",
+		harfbuzz_features = { "zero", "ss01", "ss02", "ss03", "ss07", "cv24", "cv31" },
 	},
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 })
