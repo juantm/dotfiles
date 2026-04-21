@@ -15,7 +15,11 @@ config.initial_rows = 40
 config.initial_cols = 160
 
 config.window_background_opacity = 0.74 -- opacity as you please
-config.kde_window_background_blur = true
+if wezterm.target_triple == "x86_64-apple-darwin" then
+	config.macos_window_background_blur = 20
+else
+	config.kde_window_background_blur = true
+end
 
 -- This is where you actually apply your config choices
 -- config.font = wezterm.font_with_fallback {'Cozette', 'Iosevka Term SS05', 'MesloLGS NF'}
@@ -28,8 +32,8 @@ fuentes = wezterm.font_with_fallback({
 	--  { family = "Cozette", weight = "Regular" },
 	--- { family = "Victor Mono", weight = 400 },
 	{
-		family = "Consolas ligaturized v3",
-		--  family = "Fira Code iScript",
+		--  family = "Consolas ligaturized v3",
+		family = "Fira Code iScript",
 		--  family = "LigaConsola Nerd Font",
 		--  weight = "Light",
 		harfbuzz_features = { "zero", "ss01", "ss02", "ss03", "ss07", "cv24", "cv31" },
