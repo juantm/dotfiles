@@ -1,0 +1,10 @@
+hl.on("hyprland.start", function()
+    --   hl.exec_cmd(terminal)
+    --   hl.exec_cmd("nm-applet")
+    --   hl.exec_cmd("waybar & hyprpaper & firefox")
+    --   hl.exec_cmd("systemctl --user start graphical-session.target")
+    --   hl.exec_cmd("walker --gapplication-service")
+    --   hl.exec_cmd("caelestia shell")
+    hl.exec_cmd("qs -c noctalia-shell")
+    --   hl.exec_cmd("dms run") Running by systemd
+end)
